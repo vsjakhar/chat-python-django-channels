@@ -20,6 +20,22 @@ Chat with Python Django Channels
 	pip3 install mysqlclient
 	LDFLAGS=-L/usr/local/opt/openssl/lib pip install mysqlclient
 
+## Install and Setup Redis Channel Layer for Message sent and recive
+Before install channels_redis we need to install Redis server with Docker or Direct on our server and run it before using
+We will use a channel layer that uses Redis as its backing store. To start a Redis server with Docker on port 6379, run the following command:
+
+	docker run -p 6379:6379 -d redis:2.8
+
+For Mac you can Install and Start Redis by these Commands and also check redis info
+	
+	brew install redis
+	brew services start redis
+	brew info redis
+
+After Running Redis Server you can Install redis for Channels with This Command
+
+	pip3 install channels_redis
+
 ## Update requirements.txt file
 	pip3 freeze > requirements.txt
 
