@@ -25,7 +25,7 @@ SECRET_KEY = 'knxb9%5j!qz@rx%=@vq8m*mq!3-s#%2f)@0e%s@r5h2w6&tit%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -123,3 +123,14 @@ STATIC_URL = '/static/'
 
 
 ASGI_APPLICATION = "chat.routing.application"
+# Channels
+ASGI_APPLICATION = 'chat.routing.application'
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            "hosts": [('127.0.0.1', 6379)],
+        },
+    },
+}
+
