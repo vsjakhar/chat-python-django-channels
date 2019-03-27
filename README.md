@@ -32,6 +32,12 @@ For Mac you can Install and Start Redis by these Commands and also check redis i
 	brew services start redis
 	brew info redis
 
+For Ubuntu you can Install and Start Redis Server by these commands and also check redis info
+
+	sudo apt install redis-server
+	sudo systemctl status redis
+	sudo systemctl restart redis.service
+
 After Running Redis Server you can Install redis for Channels with This Command
 
 	pip3 install channels_redis
